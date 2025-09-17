@@ -1,0 +1,1030 @@
+Educational Projects / Tutorials
+
+Example Arduino Projects
+1. Liquid Vending Machine
+
+Arduino Mega + 11 Peristaltic Pumps for precise liquid dispensing.
+
+2. Fire Sprinkler Testing Device
+
+PID-controlled Arduino system to test fire sprinklers under realistic conditions.
+
+3. Smart Car Crash Alert
+
+Arduino + GSM + GPS + MPU6050 + FSR402 for automatic accident detection & emergency alerts.
+
+4. Prayer Time Azan Alarm
+
+Automated Islamic prayer reminder using Arduino Mega.
+
+5. Color Sorting Device
+
+Automated color detection & sorting system with servo motors.
+
+6. Posture Correction Device
+
+Monitors user posture and alerts when sitting incorrectly.
+
+7. Steam Valve Control
+
+Stepper motor + Arduino for precision control of compressed air in steam engines.
+
+8. Container Strap Safety Device
+
+Checks cargo strap safety in logistics and transport.
+
+9. UHF RFID Door Lock
+
+ATmega328P-based modular PCB for secure RFID access.
+
+10. Multi-RFID Security System
+
+Uses 4 RFID modules with Arduino UNO for multi-user authentication.
+
+11. Pump Control System
+
+Arduino Mega + custom PCB to manage pump operations.
+
+12. Measurement Wheel
+
+Measures millimeter-level distances in woodworking and CNC setups.
+
+13. Perfume Dispenser
+
+Arduino Nano + PCB for timed perfume spray.
+
+14. Health Monitoring System
+
+RFID, sensors, and stepper motor PCB for health tracking.
+
+15. Automatic Irrigation System
+
+Arduino Nano + PCB for soil-moisture based irrigation.
+
+16. Bee Hive Weight Scale
+
+IoT-based hive monitoring with LCD display + SMS alerts.
+
+17. Line Following Robot
+
+Autonomous path-following robot with Arduino.
+
+18. Heart Rate Monitor
+
+Arduino UNO + Bluetooth + OLED + buzzer for heart monitoring.
+
+19. Voice-Controlled LED Brightness
+
+Adjusts 12V LEDs using voice intensity commands.
+
+20. Juice Dispenser Machine
+
+Arduino Mega-based drink dispenser.
+
+21. Coffee Vending Machine
+
+Arduino UNO + payment + coffee dispensing system.
+
+22. Robotic Arm (Sugar Cube Picker)
+
+LDR sensor + servo motors for automated picking.
+
+23. Solar Tracker System
+
+Single-axis solar tracking with LDR sensors + servo motors.
+
+24. Linear Actuator Control System
+
+Precise Arduino Uno-based actuator controller.
+
+25. Bomb Puzzle Game
+
+Interactive Arduino Uno game with keypad + MP3 module.
+
+26. Call of Duty: Domination Game
+
+Arduino Mega game simulating “Search & Destroy” mode.
+
+27. NeoPixel LED Effects
+
+Custom RGB lighting control projects.
+
+28. TubeWell Pump Control (IoT + SMS)
+
+Arduino UNO + GSM + Blynk IoT app for remote water pump control.
+
+29. Digital Weight Machine
+
+Nextion Touch LCD + Arduino + load cell (200KG).
+
+30. Irrigation Scheduling with LCD
+
+Touch-screen controlled irrigation system.
+
+31. RFID Door Lock
+
+Arduino UNO-based secure RFID door access.
+
+32. Beverages Dispensing Machine
+
+Arduino-based multi-drink automation.
+
+33. Weather Station
+
+Arduino UNO R4 Wi-Fi for real-time weather monitoring.
+
+34. Multiple RFID Modules Project
+
+Arduino UNO + RFID for inventory/attendance/security.
+
+35. Vehicle Speed Limiter Device
+
+Arduino-based road safety speed control.
+
+36. Smart Window Automation
+
+Home/office window automation system.
+
+37. Fingerprint Door Lock
+
+Biometric door access with Arduino.
+
+38. Powder Dispenser
+
+Arduino Mega + LCD for automated powder dispensing.
+
+39. Industrial Oven Controller
+
+Arduino-based temperature control system.
+
+
+Example Projects
+
+Liquid Dispensing System
+A custom-built vending machine for various liquids using 11 Peristaltic Liquid Transfer Pumps (12V).
+
+Fire Sprinkler Testing System
+A system to test sprinkler setups under controlled and realistic fire-safety conditions.
+
+Smart Car Crash Alert
+An Arduino-based accident detection and alert system for timely medical assistance.
+
+Prayer Time Azan Alarm
+A fully automated system using Arduino Mega to remind Muslim users of daily prayers.
+
+Color Sorting Device
+An automated system that detects colors and sorts objects into categories, useful in manufacturing and agriculture.
+
+Posture Monitoring System
+A device to monitor sitting posture and alert users to prevent back problems.
+
+Needle Valve Control for Steam Engine
+Precisely controls compressed air flow for steam engine operation.
+
+Container Strap Checking Device
+Ensures cargo strap safety in transportation and logistics.
+
+RFID Door Lock (UHF & Multi-Module Versions)
+Secure access systems using ATmega328P or multiple RFID modules.
+
+Pump Control System (PCB Design)
+Custom PCB for interfacing Arduino Mega with external pump systems.
+
+Measurement Wheel
+Measures linear distance in millimeters using Arduino-based sensors.
+
+Automatic Perfume Dispenser
+Sprays perfume at set intervals via custom Arduino Nano PCB.
+
+Health Monitoring & Control System
+Integrates RFID, sensors, and stepper motors for user authentication and health tracking.
+
+Automatic Irrigation System
+Uses soil moisture data and scheduling to optimize water use.
+
+Bee Hive Weight Scale
+Monitors hive weight and sends real-time data to LCD and GSM.
+
+Line Following Robot
+Follows a black/white path autonomously, useful in industrial automation.
+
+Heart Rate Monitoring Device
+Uses Arduino UNO, Bluetooth, and sensors to track heart rate.
+
+Voice-Controlled LED Brightness
+Adjusts 12V LED light brightness via voice commands.
+
+Juice Dispenser Machine
+Automated drink dispenser using Arduino Mega.
+
+Coffee Vending Machine
+Select type/size, make payment, and receive coffee using Arduino UNO.
+
+Robotic Arm (Sugar Cube Picker)
+Detects and picks sugar cubes with LDR sensors.
+
+Solar Tracker System (Single Axis)
+Optimizes solar panel efficiency by tracking the sun.
+
+Linear Actuator Control System
+Arduino Uno-based precise actuator control for automation.
+
+Bomb Puzzle Game
+Interactive Arduino Uno-based puzzle game with keypad and MP3 module.
+
+Domination Game Simulation
+“Search and Destroy” mode simulation inspired by Call of Duty.
+
+NeoPixel LED Projects
+Custom programmable RGB LED lighting projects.
+
+TubeWell Water Pump Control (SMS/IoT)
+Remote water pump control using Arduino UNO, GSM, or Blynk IoT.
+
+Digital Weight Machine
+Uses Nextion LCD, Arduino, and 200KG load cell.
+
+Nextion LCD Irrigation Controller
+Touch-screen controlled water supply system.
+
+RFID Door Lock with Solenoid
+Access control using RFID tags and relay systems.
+
+Beverages Dispensing Machine
+Automated drink system for commercial use.
+
+Weather Station
+Records temperature, humidity, rainfall, and pressure.
+
+Multi-RFID System
+For attendance tracking, inventory management, or security.
+
+Vehicle Speed Limiter
+Arduino-based road safety device to monitor/control vehicle speed.
+
+Smart Window System
+Automated home/office window control with Arduino.
+
+Fingerprint Door Lock
+Biometric access control using Arduino.
+
+Powder Dispenser with LCD Control
+Automated powder dispensing with touch-screen interface.
+
+Industrial Oven Temperature Control
+Ensures precise oven heating with sensors and controls.
+
+Additional Services
+
+Product Design & Development
+
+Arduino Projects & Programming
+
+ESP32 and ESP8266 Projects
+
+IoT Projects
+
+Automation Services
+
+App and Web Development
+
+Robotics and AI Projects
+
+Educational Projects
+
+Our 3D Design & Modeling Projects
+
+We design 3D models for product development, prototyping, and manufacturing, tailored to real-world client needs.
+
+Projects can be product cases, IoT/Arduino-related parts, or standalone 3D designs.
+
+We also provide 3D printing services for your designs.
+
+Contact us for custom solutions, prototypes, or full-scale production support.
+
+PCB Design Projects
+
+We have designed many PCBs, primarily as part of product development for IoT, automation, robotics, and embedded systems.
+
+Portfolio includes custom PCB layouts and prototypes
+
+Not all projects can be displayed due to NDA commitments
+
+Services include:
+
+Custom PCB design
+
+PCB manufacturing assistance
+
+PCB assembly services
+
+📌 You can either purchase an existing project or request a custom PCB project.
+
+Educational Projects & Tutorials
+
+Hands-on Arduino, Robotics, and IoT tutorials designed to enhance learning through real-world applications.
+
+Examples of covered topics:
+
+Sensors: Hall Effect, Ultrasonic, Rain, Soil Moisture, Temperature (LM35, DS18B20, DHT11/DHT22), Sound, PIR, Reed Switch, Alcohol (MQ3), Smoke/Gas (MQ2)
+
+Actuators: Servo Motor, DC Motor, Stepper Motor, Joystick, Push Buttons
+
+Displays: LCD (16x2, I2C), RGB LED
+
+Basics: Arduino IDE, LED control, Water Level detection
+
+👉 These tutorials are great for beginners and intermediate learners looking to build practical Arduino projects.
+
+Blog
+
+Explore the Arduino Expert Blog for:
+
+Arduino project ideas
+
+Electronics tutorials
+
+Product design & prototyping tips
+
+IoT & automation solutions
+
+👉 Get step-by-step guides and expert advice to inspire your next creation.
+
+Contact Us
+
+📱 WhatsApp
+
++92 331 7564344
+
++92 325 6999219
+
+📧 Email
+
+info@arduinoexpert.com
+
+diyarduinoexperts@gmail.com
+
+📍 Office Address
+Abbasia Banglows, Rahim Yar Khan, Pakistan
+
+Our Team
+Ahmad Raza Tahir
+
+BS Mechatronics Engineering
+
+Expertise: Arduino, Automation, 3D Design & Modeling
+
+Umair Aziz
+
+BS Mechanical Engineering
+
+Expertise: Arduino, Automation, 3D Design & Modeling
+
+Asjad Wali
+
+BS Mechanical Engineering
+
+Expertise: Arduino, IoT, ESP32, Automation
+
+Shahbaz Zulfiqar
+
+MS Electrical Engineering
+
+Expertise: Generative AI, App & Web Development, Arduino, IoT
+
+Muhammad Ali
+
+BS Computer Science
+
+Expertise: App & Web Development, IoT
+
+Muhammad Zubair
+
+BS Computer Science
+
+Expertise: App & Web Development, IoT
+
+⚡ This restructuring gives you clean categories:
+
+Services (3D + PCB + Education)
+
+Blog
+
+Team
+
+Contact info
+
+That way, if a user asks your chatbot “Do you do PCB assembly?”, it retrieves only the PCB section, not tutorials or blog posts.
+
+
+Q&A Knowledge Base
+
+Q: What services do you provide?
+A: We develop Arduino-based projects, divided into two categories:
+
+Personal use projects
+
+Product-based projects using Arduino boards
+
+Q: Can you give examples of Arduino projects?
+A: Yes, here are some examples:
+
+Weather monitoring system
+
+Smart home automation
+
+IoT-based water level controller
+
+Automatic door lock system
+
+Robotics projects using Arduino
+
+Sensor integration (temperature, humidity, motion, etc.)
+
+Q: Do you share all your projects publicly?
+A: No, some projects cannot be displayed due to NDA commitments.
+
+Program ATtiny85 to work with a PWM RC receiver as a 3-position switch:
+
+Position 1 → All LEDs OFF
+
+Position 2 → Solid white LEDs ON
+
+Position 3 → Flashing LEDs ON
+
+Add ability for the same ATtiny85 to flash two different sets of LEDs, each with a unique pattern.
+
+Later revised to allow lights to turn off in reverse order (Switch 3 → 2 → 1).
+
+Hardware Used:
+
+ATtiny85 microcontroller
+
+RC PWM receiver (RadioMaster ExpressLRS)
+
+Arduino Nano (used for programming ATtiny85)
+
+5V BEC power supply
+
+LEDs (solid white + flashing red patterns)
+
+Deliverables:
+
+Arduino code for ATtiny85
+
+Simple circuit diagrams
+
+Zoom support for setup & troubleshooting
+
+Final working revision tested successfully by client
+
+Final Outcome:
+
+Client confirmed: “Dude it's perfect 👌 you guys are amazing.”
+
+Lights behave exactly as required.
+
+📌 Q&A Knowledge Base
+
+Q: What was the main goal of this ATtiny85 project?
+A: To use a PWM RC receiver to control LEDs with a 3-position switch (OFF, Solid ON, Flashing ON), plus additional flashing light patterns.
+
+Q: Which microcontroller was used?
+A: ATtiny85, programmed via Arduino Nano.
+
+Q: How was it powered?
+A: Using a 5V BEC from the aircraft system.
+
+Q: What RC receiver was used?
+A: RadioMaster ExpressLRS 10-channel PWM receiver.
+
+Q: What extra features were added?
+A:
+
+Flashing lights with unique patterns
+
+Reverse-order shutdown (Switch 3 → 2 → 1)
+
+Q: Did the client confirm it works?
+A: Yes, after revisions, the client tested and confirmed it worked perfectly.
+
+Q: What services do you provide?
+A: We specialize in Arduino-based projects, categorized into:
+
+Personal use projects
+
+Product-based projects using Arduino boards
+
+Q: Can you share some examples of your projects?
+A: Yes, here are a few examples:
+
+Weather monitoring system
+
+Smart home automation
+
+IoT-based water level controller
+
+Automatic door lock system
+
+Robotics projects using Arduino
+
+Sensor integration (temperature, humidity, motion, etc.)
+
+Q: Do you display all your projects publicly?
+A: No, some projects cannot be displayed due to NDA (Non-Disclosure Agreements) with clients.
+
+Q: Can I request a custom Arduino project?
+A: Yes, we also design and develop custom Arduino projects based on your requirements.
+
+Q: How much do your projects cost?
+A: Prices depend on project complexity, hardware requirements, and development time. Please share your project details for an estimate.
+
+Q: Do you provide hardware with the project?
+A: Yes, hardware can be included if required, or we can provide only the code/documentation.
+
+Q: How long does it take to complete a project?
+A: Completion time varies based on project size. Small projects may take a few days, while complex ones may take a few weeks.
+
+Q: Do you provide project documentation?
+A: Yes, we provide complete documentation, including code explanations, wiring diagrams, and user guides.
+
+Q: Do you provide support after project delivery?
+A: Yes, we provide limited support after delivery for bug fixes and small modifications.
+Q: What was the main goal of this Arduino project?
+A: To automate a dispensing system using a stepper-driven linear table and a linear actuator with potentiometer feedback, controlled through a Nextion HMI.
+
+Q: Which display module was used?
+A: Nextion HMI, model NX8048P050-011R.
+
+Q: What type of motor drivers were used?
+A: The client initially had a DM542T driver; TB6600 was later purchased for compatibility.
+
+Q: What did the client provide as reference?
+A: A video of manual operation and potential UI layouts.
+
+Q: What were the deliverables?
+A: Arduino code, circuit schematic, and editable HMI project files.
+
+Q: Did you provide the HMI file or just the compiled TFT?
+A: Both. The editable .hmi file was shared so the client could modify graphics and functions in the Nextion editor.
+
+Q: What was the timeline?
+A: 10 days for delivery (expedited delivery possible with higher cost).
+Client Request:
+
+Develop Arduino code and circuit schematic for a linear dispensing system.
+
+System components:
+
+Stepper motor for linear table movement
+
+Linear actuator for dispensing
+
+Potentiometer feedback control for actuator
+
+Nextion HMI display for user interface
+
+Client provided a video of manual operation and requested integration into automated control.
+
+Hardware Used / Mentioned:
+
+Stepper driver (DM542T initially, TB6600 later purchased)
+
+Stepper motor (NEMA series)
+
+Linear actuator with potentiometer feedback
+
+Nextion HMI model: NX8048P050-011R
+
+Deliverables:
+
+Arduino code for motor + actuator control
+
+Circuit schematics
+
+Nextion HMI file (.hmi) + .tft for UI
+
+Zoom support for wiring and testing
+
+Special Notes:
+
+Urgent delivery possible with more engineers (higher cost).
+
+Final agreed timeline: 10 days
+
+Client wanted editable HMI file for custom graphics and UI tweaks.
+Client Requests & Issues:
+
+Arduino Nano project with sensors, RTC, and relay controls.
+
+Debugging faults: suspected short circuit, faulty temperature sensor.
+
+Fix for CO₂ sensor thresholds not triggering relays.
+
+Question about simultaneous outputs (humidifier + air pump).
+
+RFID integration (reading card numbers).
+
+Issue with Arduino code being read-only (IDE help provided).
+
+Bus system project: wiring diagram + list of required components (including wires + power supply).
+
+HMI / touchscreen programming request → Nextion display recommended as alternative to Giga Display Shield.
+
+Hardware Mentioned:
+
+Arduino Nano (with built-in RTC chip)
+
+Temperature sensor (faulty → replaced with DHT11)
+
+CO₂ sensor
+
+Humidifier + air pump
+
+RFID module (pins: Vcc-3.3V, GND-GND, RST-9, SDA-10, MISO-12, MOSI-11, SCL-13)
+
+Nextion HMI (3.5" or 5" recommended)
+
+Deliverables:
+
+Arduino code revisions (for CO₂ relay thresholds, humidity + air pump outputs, RFID card reading).
+
+Circuit schematic + wiring diagrams.
+
+Hardware components list (including wires + power supply).
+
+Editable Nextion HMI project files.
+
+Zoom meeting support for wiring & debugging.
+
+Timeline & Pricing:
+
+General projects: 10–14 days depending on complexity.
+
+Example: $540 for a detailed actuator + syringe dispensing project (10–14 days).
+
+Urgent delivery possible with additional engineers (higher cost).
+
+📌 Chatbot Q&A Knowledge Base
+
+Q: What kind of issues did you troubleshoot in this project?
+A: Faulty sensors, incorrect wiring, Arduino code compilation issues, and CO₂ threshold not triggering relays.
+
+Q: Which temperature sensor was finally used?
+A: The faulty sensor was replaced with a DHT11 sensor.
+
+Q: How were the CO₂ thresholds handled?
+A: Revised Arduino code was provided with configurable setpoints for CO₂ relay activation.
+
+Q: Can the humidifier and air pump run together?
+A: Yes, they were programmed to operate simultaneously if the humidity drops below the setpoint.
+
+Q: How can RFID numbers be detected?
+A: RFID reader was connected with the following pins:
+
+Vcc → 3.3V
+
+GND → GND
+
+RST → 9
+
+SDA → 10
+
+MISO → 12
+
+MOSI → 11
+
+SCL → 13
+
+Q: How was the “read-only code” issue in Arduino IDE solved?
+A: By creating a new sketch (File > New Sketch), copying the provided code into it, and then compiling.
+
+Q: What display was recommended for HMI projects?
+A: Nextion display (3.5" or 5"), as it supports touch inputs and easy GUI updates via Nextion Editor.
+
+Q: What components were included in the hardware list?
+A: Arduino Nano, sensors (DHT11, CO₂), RFID module, relays, humidifier, air pump, wires (various types/lengths), and power supply.
+
+Q: What was the price and timeline for the dispensing actuator project?
+A: $540 with delivery in 10–14 days (possible to expedite with extra engineers at higher cost).
+
+Hardware Ordered
+
+Push Buttons (12V/24V, 3A, Blue Ring LED) → For mode selection (3 buttons = 3 modes).
+
+Rocker Switch (12V/24V, 20A, LED) → For main power ON/OFF.
+
+⚠️ Note: Later corrected that mode buttons should be 5V, not 12V, to avoid extra circuitry.
+✅ ON/OFF rocker switch is fine at 12V.
+
+Mode Selection
+
+3 buttons = 3 modes.
+
+Pressing a button selects that mode (momentary input only).
+
+Future upgrade: LEDs on buttons to indicate selected mode.
+
+System Logic
+
+Humidity Control:
+
+If humidity drops below setpoint X → humidifier & air pump turn ON.
+
+Once humidity reaches Z → they turn OFF.
+
+CO₂ Control:
+
+If CO₂ > threshold (2000–3000 ppm) → relay triggers.
+
+Bug fixed: previously values above 1000ppm displayed incorrectly (e.g., 850 → 8500).
+
+Display
+
+Using LCD / Nextion display.
+
+RTC library initially caused issues → switched to Arduino Nano IoT (has built-in clock).
+
+LCD backlight works, but readings required debugging (fixed in revised code).
+
+Sensors & Issues
+
+Temperature sensor was faulty → replaced with DHT11.
+
+Wrong values disturbed interface until sensor was replaced.
+
+Revised schematics provided with smaller breadboard layout.
+
+RTC module no longer needed with Nano IoT.
+
+Current Status
+
+Modes register correctly.
+
+Humidity and CO₂ thresholds work.
+
+Display operational after code/library fixes.
+
+Circuit schematic finalized.
+
+Awaiting stable testing with new sensor setup.
+Project 1
+
+Type: Boat Autopilot (based on Instructables project: Boat Autopilot
+)
+
+Board: Arduino Mega (requested)
+
+Expected Delivery: Not explicitly stated, but updates were promised in 2 days for functionality demo.
+
+📌 Project 2
+
+Type: Conveyor / Inspection Arduino project (with code + flowchart)
+
+Tools: Tinkercad simulation + Arduino
+
+Expected Delivery: 3 days
+
+Price: $180
+
+📌 Project 3
+
+Type: ATtiny85 RC-controlled lighting system (PWM receiver for LED switching + flashing patterns)
+
+Use Case: Boeing 747 model aircraft lighting for promo video
+
+Expected Delivery: 3–5 days (custom offer)
+
+Price: $160
+Project A – Airplane Lighting System (RC model)
+
+Type: ATtiny85-based RC-controlled LED lighting (solid + flashing patterns, switch-controlled)
+
+Delivery: Delivered & tested ✅
+
+Budget: Paid via BTC (amount not explicitly stated)
+
+Important Notes:
+
+Controlled via transmitter switches (3-position switch logic).
+
+Required reverse-off logic when switching modes.
+
+Successfully tested on airplane after rewiring.
+
+📌 Project B – Location Alert System
+
+Type: Arduino project with DHT11, force sensor, HM-10 Bluetooth, Neo-6M GPS
+
+Delivery: 10 days
+
+Budget: $360 (custom offer accepted) → additional $150 later for cross-platform app
+
+Important Notes:
+
+Functionality: When force sensor is pressed + temp fluctuation ≥5°F → GPS sends location to phone.
+
+Android APK initially provided (Location_Alert.apk), but had issues with Android 13.
+
+Planned migration to Flutter app (Android + iOS) with profile + EMS call placeholder.
+
+📌 Project C – AI Robot with Arduino
+
+Type: Autonomous robot that answers via mic + speaker + display (no external PC)
+
+Delivery: 14–20 days
+
+Budget: Initially proposed €300, revised to €480 (for full solution)
+
+Important Notes:
+
+Includes: component list (Amazon links), Arduino code, schematic, instructions.
+
+Zoom assistance optional (extra per hour).
+
+Still in discussion phase (confirmation pending).
+
+Project 1 – AI Robot (ChatGPT Voice Assistant with Arduino)
+
+Core Functionality:
+
+Robot communicates with user using ChatGPT API.
+
+Converts voice → text → ChatGPT → text → speech.
+
+Responses also displayed on LCD screen.
+
+Button added to start recording.
+
+Battery powered.
+
+Deliverables:
+
+List of components (with Amazon links).
+
+Arduino code.
+
+Circuit schematic.
+
+Instructions for assembly and code.
+
+Zoom assistance (optional, $40/hr).
+
+Budget & Timeline:
+
+Final agreed budget: 500 EUR (~$536).
+
+Delivery: 14 days.
+
+Order Status:
+
+Custom offer accepted.
+
+Project delivered (code + schematic + instructions).
+
+Components ordered by client, later assembly tested.
+
+Multiple Zoom meetings for troubleshooting circuit, microphone, Google Cloud setup.
+
+Technical Notes:
+
+ChatGPT API stays in the same conversation unless restarted.
+
+Revised circuit diagrams provided.
+
+Some issues with SD card module, microphone, and ESP32 (only one shipped initially).
+
+Project 2 – Smart Environment Control System (Tub Project)
+
+Sensors & Components:
+
+Humidity, Temperature, CO2 sensors.
+
+Controlled via relays: Humidifier, Air Pump, Heat Mat, LED lights.
+
+LCD display for readings.
+
+LEDs to indicate active outputs.
+
+Nano 33 IoT compatible.
+
+Core Functions:
+
+Humidifier + air pump run if humidity < 75%.
+
+Air pump runs if CO2 too high.
+
+Heat mat runs if temp < 20°C.
+
+Lights run 12h ON / 12h OFF cycle.
+
+Multiple modes (via push/rocker switches):
+
+Mode 1: Base setup.
+
+Mode 2: Temp 26°C, humidity > 75%, no lights.
+
+Mode 3: Temp 20°C, humidity > 90%, no lights.
+
+Budget & Timeline:
+
+Base cost: 260 USD, 7–10 days.
+
+With 3 modes: 280 USD, 10 days.
+
+Extra functionality (manual setpoints via interface): +$120, +7 days.
+
+Technical Notes:
+
+Push buttons (LED illuminated) used for mode selection.
+
+Later modifications: user-adjustable setpoints, extra modes possible.
+
+Components must be 5V rated switches (not 12V).
+
+RTC initially used, later removed as Nano IoT has internal RTC.
+
+Several revised codes shared to fix:
+
+LCD brightness issue.
+
+CO2 reading error (stuck at 4 digits).
+
+Temperature sensor fault (switched to DHT11).
+
+Zoom meetings used for troubleshooting.
+
+Extra Notes
+
+Ahmad frequently provides:
+
+Component lists with Amazon links.
+
+Circuit diagrams.
+
+Revised codes after testing.
+
+Troubleshooting via Zoom meetings.
+
+Zoom meetings charged separately: $40/hr.
+
+Client issues included:
+
+Wrong/broken sensors.
+
+ESP32 shipping delay.
+
+Difficulty setting up Google Cloud.
+
+LCD/RTC conflicts.
+
+Clients often requested manual flexibility (setpoints, modes, LED indicators) which increased scope/cost. 
+Headings: ['3D Design and Modeling', '3D Printing Services', 'PCB Design Services', 'Our Services']
+Paragraphs: ['Product design and development is the systematic process of creating new products or enhancing existing ones from idea generation to market launch. It involves a series of steps aimed at conceptualizing, designing, prototyping, testing, and refining products to meet customer needs and market demands.', 'Get end-to-end product design and development services atArduinoExpert. We offer 3D design, 3D printing, PCB design, and custom coding for electronics and IoT solutions. Contact ushere.', 'Whether you are conceptualizing a new product, optimizing existing designs, or prototyping for manufacturing, we provide comprehensive 3D Design and Modeling\xa0 solutions.', 'From prototyping to intricate models, we’ve got you covered. Let’s shape the future together. Start printing your dreams today!. Just give us your 3D Design Model File or Share your Design idea.', 'Whether you’re developing a prototype or bringing a product to market, we offer comprehensive PCB Designing Solutions tailored to your specific needs. We use software like EasyEDA.', 'Product Design and DevelopmentArduino Projects and ProgrammingESP32 and ESP8266 ProjectsIoT ProjectsAutomation Projects & ServicesApp and Web DevelopmentRobotics and AI ProjectsEducational Projects']
+Colab paid products - Cancel contracts here
+Rephrase
+Product Design and Development Process
+
+The product design and development process is a structured approach that guides the transformation of an idea into a final product ready for the market. It involves multiple stages to ensure that the product is functional, user-friendly, cost-effective, and aligned with customer needs.
+
+Product Design and Development Process Steps
+
+Idea Generation
+
+Collecting innovative ideas from brainstorming, market research, customer feedback, and competitor analysis.
+
+Idea Screening
+
+Evaluating and filtering ideas to select the most feasible and impactful ones.
+
+Concept Development and Testing
+
+Creating product concepts, prototypes, or mockups and testing them with target users for feedback.
+
+Business Analysis
+
+Assessing cost, pricing, demand forecasting, and profitability of the product concept.
+
+Product Design and Engineering
+
+Designing the product’s structure, appearance, features, and ensuring technical feasibility.
+
+Prototype Development
+
+Building a working model or sample to test design, performance, and usability.
+
+Product Testing and Validation
+
+Conducting quality checks, user trials, and safety tests to ensure the product meets standards.
+
+Market Testing
+
+Launching the product in a limited market to study consumer response.
+
+Commercialization
+
+Finalizing production, distribution, and marketing strategies for full-scale launch.
+
+Post-Launch Review
+
+Monitoring performance, gathering feedback, and making improvements where necessary.
