@@ -1,6 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 import os
+import sys
+
 
 # --- Load knowledge base ---
 with open("knowledge.txt", "r", encoding="utf-8") as f:
