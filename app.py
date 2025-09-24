@@ -1,8 +1,6 @@
 import streamlit as st
-import google.generativeai as genai
 import os
-import sys
-
+from google import genai
 
 # --- Load knowledge base ---
 with open("knowledge.txt", "r", encoding="utf-8") as f:
@@ -17,18 +15,21 @@ if "chat_history" not in st.session_state:
         {"role": "system", "content": "👋 Welcome to Arduino Expert! Ask me anything about Arduino projects."}
     ]
 
+# --- Chat function (replaced with HuggingFace-style logic) ---
 def chat(user_input):
-    context_text = f"Knowledge base:\n{knowledge_base}\n\n"
+    context_text = f"Use the following knowledge base to answer the user's question:\n\n{knowledge_base}\n\n"
+    context_text += "Previous chat history:\n"
     for msg in st.session_state.chat_history:
         context_text += f"{msg['role'].capitalize()}: {msg['content']}\n"
-    context_text += f"User: {user_input}\nAnswer based ONLY on the knowledge base above."
+    context_text += f"User: {user_input}\nAnswer based on the knowledge above."
 
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        response = model.generate_content(context_text)
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        chat_session = client.chats.create(model="gemini-2.5-flash")
+        response = chat_session.send_message(context_text)
         reply = response.text
     except Exception as e:
-        reply = f"❌ Error: {e}"
+        reply = f"❌ Error calling Gemini model: {e}"
 
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     st.session_state.chat_history.append({"role": "assistant", "content": reply})
