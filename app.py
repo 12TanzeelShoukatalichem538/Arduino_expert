@@ -6,9 +6,6 @@ import google.generativeai as genai
 # --- Load Gemini API key from Streamlit secrets ---
 api_key = st.secrets["GOOGLE_API_KEY"]
 
-# Configure Gemini
-genai.configure(api_key=api_key)
-
 # --- Load knowledge base ---
 with open("knowledge.txt", "r", encoding="utf-8") as f:
     knowledge_base = f.read()
@@ -31,7 +28,7 @@ def chat(user_input, history):
     context_text += f"User: {user_input}\nAnswer based on the knowledge above."
 
     try:
-        client = genai.Client(api_key=api_key)
+        client = genai.Client(api_key=api_key)   # ✅ fixed Gemini code
         chat_session = client.chats.create(model="gemini-2.5-flash")
         response = chat_session.send_message(context_text)
         reply = response.text
