@@ -6,6 +6,9 @@ import google.generativeai as genai
 # --- Load Gemini API key from Streamlit secrets ---
 api_key = st.secrets["GOOGLE_API_KEY"]
 
+# Configure Gemini
+genai.configure(api_key=api_key)
+
 # --- Load knowledge base ---
 with open("knowledge.txt", "r", encoding="utf-8") as f:
     knowledge_base = f.read()
