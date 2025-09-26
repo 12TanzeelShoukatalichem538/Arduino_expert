@@ -3,11 +3,16 @@ import os
 import google.generativeai as genai
 
 
-# Load API key securely from Streamlit secrets
-api_key = st.secrets["GOOGLE_API_KEY"]
+# --- Load API key safely ---
+api_key = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 
-# Configure the Google Generative AI client
+if not api_key:
+    st.error("❌ API key not found. Please add GOOGLE_API_KEY in Streamlit secrets or environment.")
+    st.stop()
+
+# Configure Generative AI
 genai.configure(api_key=api_key)
+
 
 # Load your knowledge base text file (no change in this part)
 @st.cache_data
