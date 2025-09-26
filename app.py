@@ -1,8 +1,6 @@
 import streamlit as st
 import os
 import google.generativeai as genai
-from google import genai
-from google.genai import types
 
 
 # --- Load Gemini API key from Streamlit secrets ---
