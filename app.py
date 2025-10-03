@@ -13,7 +13,11 @@ if not api_key:
 # Configure Generative AI
 genai.configure(api_key=api_key)
 
-
+# --- Session state ---
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = [
+        {"role": "system", "content": "👋 Welcome to Arduino Expert! Ask me anything about Arduino projects."}
+    ]
 # Load your knowledge base text file (no change in this part)
 @st.cache_data
 def load_knowledge_base(file_path="knowledge.txt"):
