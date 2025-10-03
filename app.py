@@ -24,7 +24,7 @@ knowledge_base = load_knowledge_base()
 
 # Function to generate response using knowledge base + user query
 def generate_response(user_query):
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"Answer the question based on the following knowledge:\n\n{knowledge_base}\n\nQuestion: {user_query}"
     response = model.generate_content(prompt)
     return response.text
