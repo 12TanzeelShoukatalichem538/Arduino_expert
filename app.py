@@ -2,9 +2,8 @@ import streamlit as st
 import os
 import google.generativeai as genai
 
-
 # --- Load API key safely ---
-api_key = st.secrets["GOOGLE_API_KEY"]
+api_key = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 
 if not api_key:
     st.error("❌ API key not found. Please add GOOGLE_API_KEY in Streamlit secrets or environment.")
@@ -18,7 +17,8 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
         {"role": "system", "content": "👋 Welcome to Arduino Expert! Ask me anything about Arduino projects."}
     ]
-# Load your knowledge base text file (no change in this part)
+
+# --- Load your knowledge base ---
 @st.cache_data
 def load_knowledge_base(file_path="knowledge.txt"):
     with open(file_path, "r", encoding="utf-8") as f:
@@ -26,14 +26,14 @@ def load_knowledge_base(file_path="knowledge.txt"):
 
 knowledge_base = load_knowledge_base()
 
-# Function to generate response using knowledge base + user query
+# --- Function to generate response ---
 def generate_response(user_query):
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    # Use a valid model name (gemini-1.5-pro / gemini-1.5-flash etc.)
+    model = genai.GenerativeModel("gemini-1.5-pro")
     prompt = f"Answer the question based on the following knowledge:\n\n{knowledge_base}\n\nQuestion: {user_query}"
     response = model.generate_content(prompt)
     return response.text
 
-# --- Streamlit UI ---
 # --- Page Config ---
 st.set_page_config(page_title="Arduino Expert", page_icon="🤖", layout="wide")
 
@@ -107,7 +107,16 @@ for msg in st.session_state.chat_history:
 # --- Input Box ---
 user_input = st.chat_input("💬 Ask your Arduino question...")
 if user_input:
-    reply = chat(user_input)
+    # Add user message
+    st.session_state.chat_history.append({"role": "user", "content": user_input})
+
+    # Generate response
+    reply = generate_response(user_input)
+
+    # Add assistant reply
+    st.session_state.chat_history.append({"role": "assistant", "content": reply})
+
+    # Display immediately
     st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
 
 # --- Clear Button ---
