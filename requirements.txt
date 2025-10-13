@@ -1,12 +1,12 @@
 streamlit>=1.30.0
 google-generativeai>=0.7.2
 firebase-admin
-google-auth langchain openai 
 google-auth
 langchain
 pandas
 numpy
 requests
+
 
 
 
