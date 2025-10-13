@@ -35,7 +35,7 @@ db = firestore.client()
 # ----------------------------------------------------------------
 # 2️⃣ --- EMAIL SETUP (for owner notification) ---
 # ----------------------------------------------------------------
-OWNER_EMAIL = "tanzeel.shoukat11@gmail.com  # 👈 replace with your email
+OWNER_EMAIL = "tanzeel.shoukat11@gmail.com"  # 👈 replace with your email
 GMAIL_USER = "yourgmail@gmail.com"  # 👈 Gmail that will send notifications
 GMAIL_APP_PASSWORD = st.secrets.get("gmail_app_password")  # store in Streamlit secrets
 
