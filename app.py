@@ -25,9 +25,19 @@ genai.configure(api_key=api_key)
 if "firebase_initialized" not in st.session_state:
     try:
         # ✅ Convert AttrDict to dict for Firebase
-        firebase_config = dict(st.secrets["firebase"])
-        cred = credentials.Certificate(firebase_config)
-        firebase_admin.initialize_app(cred)
+        try:
+    firebase_credentials = dict(st.secrets["firebase"])
+    cred = credentials.Certificate(firebase_credentials)
+
+    if not firebase_admin._apps:  # ✅ only initialize once
+        firebase_admin.initialize_app(cred, {
+            'databaseURL': st.secrets["database_url"]
+        })
+    else:
+        firebase_admin.get_app()  # ✅ reuse existing app
+except Exception as e:
+    st.warning(f"⚠️ Firebase initialization failed: {e}")
+
         st.session_state.firebase_initialized = True
     except Exception as e:
         st.error(f"⚠️ Firebase initialization failed: {e}")
