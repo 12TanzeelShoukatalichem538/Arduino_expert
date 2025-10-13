@@ -1,7 +1,11 @@
 import streamlit as st
 import os
 import google.generativeai as genai
-
+import firebase_admin
+from firebase_admin import credentials, db
+from datetime import datetime
+import uuid
+import json
 # --- Load API key safely ---
 api_key = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 
