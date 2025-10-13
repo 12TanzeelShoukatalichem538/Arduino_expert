@@ -149,7 +149,7 @@ for msg in st.session_state.chat_history:
     if msg["role"] == "user":
         st.markdown(f"<div class='chat-box chat-user'>👩‍💻 <b>You:</b> {msg['content']}</div>", unsafe_allow_html=True)
     elif msg["role"] == "assistant":
-        st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {msg['content']}</div>", unsafe_allow_html=True)
+        st.markdown(  f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
     elif msg["role"] == "system":
         st.markdown(f"<div class='chat-box chat-system'>ℹ️ {msg['content']}</div>", unsafe_allow_html=True)
 
