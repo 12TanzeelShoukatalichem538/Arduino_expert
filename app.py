@@ -177,4 +177,15 @@ if user_input:
     log_message("assistant", reply)
 
     # Display immediately
-    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsa
+    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>",
+    unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
