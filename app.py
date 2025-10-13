@@ -24,8 +24,9 @@ genai.configure(api_key=api_key)
 # Initialize Firebase (only once)
 if "firebase_initialized" not in st.session_state:
     try:
-        # ✅ Load from [firebase] section in secrets
-        cred = credentials.Certificate(st.secrets["firebase"])
+        # ✅ Convert AttrDict to dict for Firebase
+        firebase_config = dict(st.secrets["firebase"])
+        cred = credentials.Certificate(firebase_config)
         firebase_admin.initialize_app(cred)
         st.session_state.firebase_initialized = True
     except Exception as e:
@@ -176,13 +177,4 @@ if user_input:
     log_message("assistant", reply)
 
     # Display immediately
-    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
-
-# ----------------------------------------------------------------
-# 9️⃣ --- CLEAR CHAT BUTTON ---
-# ----------------------------------------------------------------
-if st.button("🧹 Clear Chat"):
-    st.session_state.chat_history = [
-        {"role": "system", "content": "👋 Welcome to Arduino Expert! Ask me anything about Arduino projects."}
-    ]
-    st.experimental_rerun()
+    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsa
