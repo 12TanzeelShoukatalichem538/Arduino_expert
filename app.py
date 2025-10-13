@@ -25,22 +25,19 @@ genai.configure(api_key=api_key)
 if "firebase_initialized" not in st.session_state:
     try:
         # ✅ Convert AttrDict to dict for Firebase
-        try:
-    firebase_credentials = dict(st.secrets["firebase"])
-    cred = credentials.Certificate(firebase_credentials)
+        firebase_credentials = dict(st.secrets["firebase"])
+        cred = credentials.Certificate(firebase_credentials)
 
-    if not firebase_admin._apps:  # ✅ only initialize once
-        firebase_admin.initialize_app(cred, {
-            'databaseURL': st.secrets["database_url"]
-        })
-    else:
-        firebase_admin.get_app()  # ✅ reuse existing app
-except Exception as e:
-    st.warning(f"⚠️ Firebase initialization failed: {e}")
+        if not firebase_admin._apps:  # ✅ only initialize once
+            firebase_admin.initialize_app(cred, {
+                'databaseURL': st.secrets.get("database_url", "")
+            })
+        else:
+            firebase_admin.get_app()  # ✅ reuse existing app
 
         st.session_state.firebase_initialized = True
     except Exception as e:
-        st.error(f"⚠️ Firebase initialization failed: {e}")
+        st.warning(f"⚠️ Firebase initialization failed: {e}")
 
 db = firestore.client()
 
@@ -84,13 +81,11 @@ def log_message(role, text):
     """Save each message to Firestore"""
     try:
         chat_ref = db.collection("chats").document(st.session_state.session_id)
-        # store messages in a subcollection
         chat_ref.collection("messages").add({
             "role": role,
             "text": text,
             "timestamp": datetime.utcnow()
         })
-        # update meta
         chat_ref.set({
             "meta": {
                 "created_at": datetime.utcnow(),
@@ -159,7 +154,7 @@ for msg in st.session_state.chat_history:
     if msg["role"] == "user":
         st.markdown(f"<div class='chat-box chat-user'>👩‍💻 <b>You:</b> {msg['content']}</div>", unsafe_allow_html=True)
     elif msg["role"] == "assistant":
-        st.markdown(  f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {msg['content']}</div>", unsafe_allow_html=True)
     elif msg["role"] == "system":
         st.markdown(f"<div class='chat-box chat-system'>ℹ️ {msg['content']}</div>", unsafe_allow_html=True)
 
@@ -169,11 +164,9 @@ for msg in st.session_state.chat_history:
 user_input = st.chat_input("💬 Ask your Arduino question...")
 
 if user_input:
-    # Add user message
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     log_message("user", user_input)
 
-    # Send owner email only for the first message
     if not st.session_state.chat_started:
         send_owner_email(
             subject="📩 New Chat Started on Arduino Chatbot",
@@ -181,21 +174,8 @@ if user_input:
         )
         st.session_state.chat_started = True
 
-    # Generate response
     reply = generate_response(user_input)
     st.session_state.chat_history.append({"role": "assistant", "content": reply})
     log_message("assistant", reply)
 
-    # Display immediately
-    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>",
-    unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
+    st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
