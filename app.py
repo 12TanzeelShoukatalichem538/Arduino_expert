@@ -24,7 +24,8 @@ genai.configure(api_key=api_key)
 # Initialize Firebase (only once)
 if "firebase_initialized" not in st.session_state:
     try:
-        cred = credentials.Certificate(st.secrets["firebase_service_account"])
+        # ✅ Load from [firebase] section in secrets
+        cred = credentials.Certificate(st.secrets["firebase"])
         firebase_admin.initialize_app(cred)
         st.session_state.firebase_initialized = True
     except Exception as e:
