@@ -64,7 +64,7 @@ def send_owner_email(subject, body):
         msg["Subject"] = subject
         msg.attach(MIMEText(body, "plain"))
 
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+        with smtplib.SMTP_SSL("smtp.gmail.com",  465) as server:
             server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
             server.send_message(msg)
         print("✅ Email sent successfully.")
@@ -206,3 +206,5 @@ if user_input:
     log_message("assistant", reply)
 
     st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
+    if st.button("✉️ Test Email"):
+    send_owner_email("Test Email", "Your chatbot email system is working!")
