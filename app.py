@@ -44,16 +44,20 @@ db = firestore.client()
 # ----------------------------------------------------------------
 # 2️⃣ --- EMAIL SETUP (for owner notification) ---
 # ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# 2️⃣ --- EMAIL SETUP (for owner notification) ---
+# ----------------------------------------------------------------
 OWNER_EMAIL = "tanzeel.shoukat11@gmail.com"  # 👈 replace with your email
-GMAIL_USER = "tanzeel.shoukat11@gmail.com"  # 👈 Gmail that will send notifications
-GMAIL_APP_PASSWORD = st.secrets.get("gmail_app_password")  # store in Streamlit secrets
+GMAIL_USER = st.secrets["gmail"]["gmail_user"]  # 👈 read Gmail user from secrets
+GMAIL_APP_PASSWORD = st.secrets["gmail"]["gmail_app_password"]  # 👈 read Gmail App Password from secrets
 
 def send_owner_email(subject, body):
     """Send email to owner when new chat starts"""
     try:
-        if not GMAIL_APP_PASSWORD:
-            st.warning("⚠️ Gmail App Password missing in secrets.")
+        if not GMAIL_USER or not GMAIL_APP_PASSWORD:
+            st.warning("⚠️ Gmail credentials missing in Streamlit secrets.")
             return
+
         msg = MIMEMultipart()
         msg["From"] = GMAIL_USER
         msg["To"] = OWNER_EMAIL
@@ -65,7 +69,30 @@ def send_owner_email(subject, body):
             server.send_message(msg)
         print("✅ Email sent successfully.")
     except Exception as e:
-        print(f"❌ Email sending failed: {e}")
+        st.error(f"❌ Email sending failed: {e}")
+
+# OWNER_EMAIL = "tanzeel.shoukat11@gmail.com"  # 👈 replace with your email
+# GMAIL_USER = "tanzeel.shoukat11@gmail.com"  # 👈 Gmail that will send notifications
+# GMAIL_APP_PASSWORD = st.secrets.get("gmail_app_password")  # store in Streamlit secrets
+
+# def send_owner_email(subject, body):
+#     """Send email to owner when new chat starts"""
+#     try:
+#         if not GMAIL_APP_PASSWORD:
+#             st.warning("⚠️ Gmail App Password missing in secrets.")
+#             return
+#         msg = MIMEMultipart()
+#         msg["From"] = GMAIL_USER
+#         msg["To"] = OWNER_EMAIL
+#         msg["Subject"] = subject
+#         msg.attach(MIMEText(body, "plain"))
+
+#         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+#             server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+#             server.send_message(msg)
+#         print("✅ Email sent successfully.")
+#     except Exception as e:
+#         print(f"❌ Email sending failed: {e}")
 
 # ----------------------------------------------------------------
 # 3️⃣ --- SESSION HANDLING ---
