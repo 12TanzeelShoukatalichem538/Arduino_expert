@@ -207,4 +207,4 @@ if user_input:
 
     st.markdown(f"<div class='chat-box chat-assistant'>🤖 <b>Assistant:</b> {reply}</div>", unsafe_allow_html=True)
     if st.button("✉️ Test Email"):
-    send_owner_email("Test Email", "Your chatbot email system is working!")
+         send_owner_email("Test Email", "Your chatbot email system is working!")
