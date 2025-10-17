@@ -47,8 +47,7 @@ db = firestore.client()
 OWNER_EMAIL = "tanzeel.shoukat11@gmail.com"  # 👈 replace with your email
 GMAIL_USER = "tanzeel.shoukat11@gmail.com"  # 👈 Gmail that will send notifications
 GMAIL_APP_PASSWORD = st.secrets.get("gmail_app_password")  # store in Streamlit secrets
-st.write("Secrets keys available:", list(st.secrets.keys()))
-st.write("Gmail password:", st.secrets.get("gmail_app_password"))
+
 def send_owner_email(subject, body):
     """Send email to owner when new chat starts"""
     try:
