@@ -47,7 +47,7 @@ db = firestore.client()
 # ----------------------------------------------------------------
 # 2️⃣ --- EMAIL SETUP (for owner notification) ---
 # ----------------------------------------------------------------
-OWNER_EMAIL = "diyarduinoexperts@gmail.com"  # 👈 replace with your email
+OWNER_EMAIL = "arduinotutors03@gmail.com"  # 👈 replace with your email
 GMAIL_USER = st.secrets["gmail"]["gmail_user"]  # 👈 read Gmail user from secrets
 GMAIL_APP_PASSWORD = st.secrets["gmail"]["gmail_app_password"]  # 👈 read Gmail App Password from secrets
 
@@ -71,8 +71,8 @@ def send_owner_email(subject, body):
     except Exception as e:
         st.error(f"❌ Email sending failed: {e}")
 
-# OWNER_EMAIL = "diyarduinoexperts@gmail.com"  # 👈 replace with your email
-# GMAIL_USER = "diyarduinoexperts@gmail.com"  # 👈 Gmail that will send notifications
+# OWNER_EMAIL = "arduinotutors03@gmail.com"  # 👈 replace with your email
+# GMAIL_USER = "arduinotutors03@gmail.com"  # 👈 Gmail that will send notifications
 # GMAIL_APP_PASSWORD = st.secrets.get("gmail_app_password")  # store in Streamlit secrets
 
 # def send_owner_email(subject, body):
