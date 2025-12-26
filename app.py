@@ -8,7 +8,24 @@ import uuid
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import threading  # <- for async email
+import threading  # for async email
+
+# ----------------------------------------------------------------
+# 0️⃣ --- SAFE SESSION STATE INITIALIZATION ---
+# ----------------------------------------------------------------
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+if "chat_started" not in st.session_state:
+    st.session_state.chat_started = False
+
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = [
+        {"role": "system", "content": "👋 Welcome! How can we help you today?"}
+    ]
+
+if "cache" not in st.session_state:
+    st.session_state.cache = {}
 
 # ----------------------------------------------------------------
 # 1️⃣ --- API + FIREBASE SETUP ---
@@ -62,15 +79,7 @@ def send_owner_email(subject, body):
         print(f"❌ Email sending failed: {e}")
 
 # ----------------------------------------------------------------
-# 3️⃣ --- SESSION HANDLING ---
-# ----------------------------------------------------------------
-if "session_id" not in st.session_state:
-    st.session_state.session_id = str(uuid.uuid4())
-    st.session_state.chat_started = False
-    st.session_state.cache = {}  # for caching repeated questions
-
-# ----------------------------------------------------------------
-# 4️⃣ --- CHAT STORAGE ---
+# 3️⃣ --- CHAT STORAGE ---
 # ----------------------------------------------------------------
 def log_message(role, text):
     try:
@@ -90,7 +99,7 @@ def log_message(role, text):
         print(f"❌ Firestore logging error: {e}")
 
 # ----------------------------------------------------------------
-# 5️⃣ --- LOAD KNOWLEDGE BASE ---
+# 4️⃣ --- LOAD KNOWLEDGE BASE ---
 # ----------------------------------------------------------------
 @st.cache_data
 def load_knowledge_base(file_path="knowledge.txt"):
@@ -100,10 +109,10 @@ def load_knowledge_base(file_path="knowledge.txt"):
 knowledge_base = load_knowledge_base()
 
 # ----------------------------------------------------------------
-# 6️⃣ --- RESPONSE GENERATION WITH STREAMING & TRUNCATED KNOWLEDGE ---
+# 5️⃣ --- RESPONSE GENERATION WITH TRUNCATION + STREAMING ---
 # ----------------------------------------------------------------
 def get_relevant_knowledge(user_query, kb, limit=1500):
-    """Take first 1500 chars as context (can later replace with semantic search)"""
+    """Take first 1500 chars as context"""
     return kb[:limit]
 
 def generate_response(user_query):
@@ -131,7 +140,7 @@ Answer in a natural, human-like tone.
     return final_text.strip()
 
 # ----------------------------------------------------------------
-# 7️⃣ --- PAGE UI ---
+# 6️⃣ --- PAGE UI ---
 # ----------------------------------------------------------------
 st.set_page_config(page_title="Chat With Us", page_icon="💬", layout="wide")
 
@@ -181,19 +190,11 @@ body {background-color: #0e1117; color: white;}
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown(
-    "<div class='title-container'><h1>Chat With Us</h1></div>",
-    unsafe_allow_html=True
-)
+st.markdown("<div class='title-container'><h1>Chat With Us</h1></div>", unsafe_allow_html=True)
 
 # ----------------------------------------------------------------
-# 8️⃣ --- CHAT HISTORY ---
+# 7️⃣ --- DISPLAY CHAT HISTORY ---
 # ----------------------------------------------------------------
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = [
-        {"role": "system", "content": "👋 Welcome! How can we help you today?"}
-    ]
-
 for msg in st.session_state.chat_history:
     if msg["role"] == "user":
         st.markdown(f"<div class='chat-box chat-user'>👩‍💻 {msg['content']}</div>", unsafe_allow_html=True)
@@ -203,7 +204,7 @@ for msg in st.session_state.chat_history:
         st.markdown(f"<div class='chat-box chat-system'>{msg['content']}</div>", unsafe_allow_html=True)
 
 # ----------------------------------------------------------------
-# 9️⃣ --- INPUT + LOGGING ---
+# 8️⃣ --- CHAT INPUT + LOGGING + ASYNC EMAIL ---
 # ----------------------------------------------------------------
 user_input = st.chat_input("💬 Type your message...")
 
@@ -211,14 +212,14 @@ if user_input:
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     log_message("user", user_input)
 
-    # Send owner email in background thread
+    # Async email sending
     if not st.session_state.chat_started:
         subject = "📩 New Chat Started"
         body = f"First message:\n{user_input}\n\nSession ID: {st.session_state.session_id}"
         threading.Thread(target=send_owner_email, args=(subject, body)).start()
         st.session_state.chat_started = True
 
-    # Use cached response if available
+    # Check cache
     if user_input in st.session_state.cache:
         reply = st.session_state.cache[user_input]
     else:
@@ -229,3 +230,4 @@ if user_input:
     log_message("assistant", reply)
 
     st.markdown(f"<div class='chat-box chat-assistant'>{reply}</div>", unsafe_allow_html=True)
+
