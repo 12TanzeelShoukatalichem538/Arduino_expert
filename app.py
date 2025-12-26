@@ -101,7 +101,6 @@ knowledge_base = load_knowledge_base()
 # ----------------------------------------------------------------
 def generate_response(user_query):
     model = genai.GenerativeModel("gemini-2.5-flash")
-
     prompt = f"Answer the question based on the following knowledge:\n\n{knowledge_base}\n\nQuestion: {user_query}"
     response = model.generate_content(prompt)
     return response.text
@@ -109,25 +108,27 @@ def generate_response(user_query):
 # ----------------------------------------------------------------
 # 7️⃣ --- PAGE UI ---
 # ----------------------------------------------------------------
-st.set_page_config(page_title="Chat with Us", page_icon="💬", layout="wide")
+st.set_page_config(page_title="Chat With Us", page_icon="💬", layout="wide")
 
 st.markdown("""
 <style>
 body {background-color: #0e1117; color: white;}
+
 .title-container {
     background: linear-gradient(90deg, #ff6a00, #ee0979);
-    padding: 20px;
-    border-radius: 12px;
+    padding: 8px 12px;        /* reduced height */
+    border-radius: 8px;
     text-align: center;
-    margin-bottom: 25px;
-    box-shadow: 0 0 20px #ff6a00;
+    margin-bottom: 15px;
 }
+
 .title-container h1 {
     color: white;
-    font-size: 38px;
-    font-weight: bold;
+    font-size: 22px;         /* smaller text */
+    font-weight: 600;
     margin: 0;
 }
+
 .chat-box {
     border-radius: 12px;
     padding: 12px 18px;
@@ -135,15 +136,18 @@ body {background-color: #0e1117; color: white;}
     font-size: 16px;
     line-height: 1.5;
 }
+
 .chat-user {
     background: linear-gradient(90deg, #4facfe, #00f2fe);
     color: black;
     font-weight: bold;
 }
+
 .chat-assistant {
     background: linear-gradient(90deg, #43e97b, #38f9d7);
     color: black;
 }
+
 .chat-system {
     background: linear-gradient(90deg, #ff9a9e, #fad0c4);
     color: black;
@@ -152,9 +156,9 @@ body {background-color: #0e1117; color: white;}
 </style>
 """, unsafe_allow_html=True)
 
-# ✅ UPDATED TITLE
+# ✅ SLIM HEADER WITH NEW TEXT
 st.markdown(
-    "<div class='title-container'><h1>💬 Chat with Us</h1></div>",
+    "<div class='title-container'><h1>Chat With Us</h1></div>",
     unsafe_allow_html=True
 )
 
@@ -168,11 +172,20 @@ if "chat_history" not in st.session_state:
 
 for msg in st.session_state.chat_history:
     if msg["role"] == "user":
-        st.markdown(f"<div class='chat-box chat-user'>👩‍💻 {msg['content']}</div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='chat-box chat-user'>👩‍💻 {msg['content']}</div>",
+            unsafe_allow_html=True
+        )
     elif msg["role"] == "assistant":
-        st.markdown(f"<div class='chat-box chat-assistant'>🤖 {msg['content']}</div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='chat-box chat-assistant'>{msg['content']}</div>",
+            unsafe_allow_html=True
+        )
     elif msg["role"] == "system":
-        st.markdown(f"<div class='chat-box chat-system'>{msg['content']}</div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='chat-box chat-system'>{msg['content']}</div>",
+            unsafe_allow_html=True
+        )
 
 # ----------------------------------------------------------------
 # 9️⃣ --- INPUT + LOGGING ---
@@ -194,4 +207,7 @@ if user_input:
     st.session_state.chat_history.append({"role": "assistant", "content": reply})
     log_message("assistant", reply)
 
-    st.markdown(f"<div class='chat-box chat-assistant'>🤖 {reply}</div>", unsafe_allow_html=True)
+    st.markdown(
+        f"<div class='chat-box chat-assistant'>{reply}</div>",
+        unsafe_allow_html=True
+    )
