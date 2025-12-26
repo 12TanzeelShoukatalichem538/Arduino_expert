@@ -230,4 +230,3 @@ if user_input:
     log_message("assistant", reply)
 
     st.markdown(f"<div class='chat-box chat-assistant'>{reply}</div>", unsafe_allow_html=True)
-
